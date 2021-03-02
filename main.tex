@@ -1,0 +1,312 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+\newfontfamily{\basictitle}{basictitlefont}[
+Path = Fonts/,
+Extension = .ttf,
+UprightFont = basictitlefont
+]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\iffalse
+% \iftrue
+\addtolength{\oddsidemargin}{0.3in}
+\addtolength{\marginparsep}{0.3in}
+\addtolength{\evensidemargin}{0.3in}
+\addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{0.3in}
+\addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\normalfont
+}{}{0pt}{}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-35pt}
+\includegraphics[scale=0.20]{dp_cropped}
+\end{wrapfigure}
+\fi
+
+%----------HEADING----------
+
+{\basictitle \Huge Jacob Alexander Della}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+% \vspace{10pt}
+
+\href{mailto:jake.della3@gmail.com}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{jake.della3@gmail.com}} $|$
+\href{https://www.linkedin.com/in/jacob-della-83921a141/}{
+    \faLinkedin
+    \thinspace \thinspace        
+    \myuline{Jacob Della}} $|$
+\href{https://github.com/JDella1996}{
+    \faGithub
+    \thinspace \thinspace
+    \myuline{jdella1996}} $|$
+\faPhone
+\thinspace \thinspace
+443-763-1736
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Towson University}{Towson,MD}
+      {B.S of Computer Science, Minor of Mathematics}{Jan 2019 -- Dec 2020}
+
+  \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Community College of Baltimore County}{Essex,MD}
+      {A.S of Computer Science}{Sep 2015 -- Dec 2018}
+      
+  \resumeSubHeadingListEnd
+  
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, JavaScript, Kotlin, LUA, C/C++, MySQL, Python, Ansible} \\
+     \textbf{Markup Languages}{: CSS, HTML, JSON, XML} \\
+     \textbf{Developer Tools}{: VIM, Eclipse IDE, Intelllij, Android Studio, PyCharm IDE, Git, VSCode Editor, Android Studio} \\
+     }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {CAB ISM Co-Op}{Jan 2021 -- Present}
+      {UPS}{Timonium, MD}
+      \resumeItemListStart
+        \resumeItem{Implementing OAuth 2.0 via Spring Boot to secure service-to-service communication  }
+        \resumeItem{Built Selenium automation tools to diagnose Akamai caching issues in production}
+      \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+
+    \fi
+    
+    \resumeSubheading
+      {CAB ISM Intern}{Jun 2020 -- Aug 2020}
+      {UPS}{Timonium, MD}
+      \resumeItemListStart
+        \resumeItem{Configured Prometheus, Grafana and Netdata on 120+ hosts using Ansible to display important metrics on servers and provide host visibility}
+        \resumeItem{Developed Ansible playbooks to streamline numerous application deployments on production servers}
+        \resumeItem{Configured user groups, dashboards, alerts, and notification services in Grafana}
+
+      \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+
+    \fi
+    \resumeSubheading
+      {IT Help Desk}{Jun 2020 -- Aug 2020}
+      {Hamel Builders}{Elkridge, MD}
+      \resumeItemListStart
+        \resumeItem{Effectively troubleshooted and resolved issues on user systems}
+        \resumeItem{Researched and investigated IT solutions to make turnaround time on common issues as fast as possible}
+        
+      \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+
+    \fi
+    \resumeSubheading
+      {Assistant Superintendent / Project Engineer Intern}{Jun 2020 -- Aug 2020}
+      {Hamel Builders}{Elkridge, MD}
+      \resumeItemListStart
+        \resumeItem{Generated paperwork and spreadsheets to streamline various jobsite activities, such as expense reports and daily sign in}
+        \resumeItem{Demolished various interior sections of building according as called out for in the architectural drawings}
+        \resumeItem{Supervised subcontractors on site and reported information to upper management}
+        \resumeItem{Generated paperwork and spreadsheets to streamline various jobsite activities, such as expense reports and daily sign in}
+      \resumeItemListEnd
+      
+      \iffalse
+      % \iftrue
+
+    \fi
+  \resumeSubHeadingListEnd
+  
+    %-----------PROJECTS-----------
+\section{Coding Projects}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+          {\href{https://jdella1996.github.io/JDella1996.net/}{\myuline{\textbf{Personal Website}}} $|$ \textit{JavaScript, React}}{Feb 2019 -- Present}
+          \resumeItemListStart
+            \resumeItem{Used Github to deploy react application}
+            \resumeItem{Utilizes React and Javascript to provide smooth page transitions}
+            
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\href{https://bitbucket.org/jdella11/image_r/src/master/ }{\myuline{\textbf{ImageR Android App}}} $|$ \textit{Kotlin, Android Development}}{Mar 2020 -- May 2020}
+          \resumeItemListStart
+            \resumeItem{Set up github repository for team}
+            \resumeItem{Fully functioning, basic image processing application for Android devices on API 29}
+            \resumeItem{Utilizes multiple SQLite databases to store settings and recently opened images}
+            \resumeItem{Utilizes many asynchronous, multi-threading features found within Android such as coroutines and JobServices to perform actions in the background}
+            \resumeItem{Designed user interface, created documentation, utilized design patterns and created instrumented Kotlin unit tests}
+          \resumeItemListEnd
+          
+    \resumeProjectHeading
+          {\href{https://github.com/tulachan/cosc484projet}{\myuline{\textbf{Full-stack Reddit clone}}} $|$ \textit{JavaScript, Express, React, MySQL}}{Sep 2019 -- Dec 2019}
+          \resumeItemListStart
+            \resumeItem{Developed NodeJS endpoints and Express API to hook into MySQL database server for use with a React frontend}
+            \resumeItem{Configured, administered users and designed schemas for project’s MySQL database}
+            \resumeItem{Managed and coordinated group effort to get project finished before deadline}
+            \resumeItem{Deployed website inside a virtual machine using the Ubuntu 18.04 LTS on my home server}
+            \resumeItem{Utilized multiple Git branches to keep development inertia}
+          \resumeItemListEnd
+          
+              \resumeProjectHeading
+          {\href{https://gitlab.com/jdella1996/jagid/}{\myuline{\textbf{Jag ID facial recognition system}}} $|$ \textit{Python, MySQL, OpenCV, NumPy, Kotlin}}{Sep 2019 -- Dec 2019}
+          \resumeItemListStart
+            \resumeItem{Lead the development of the API, database and general architecture of the application}
+            \resumeItem{Administered and designed schemas for use in the project’s MySQL database}
+            \resumeItem{Utilized PostMan to send POST and GET requests to test API features without a finished Android app}
+            \resumeItem{JagID was designed to invoke Python scripts with arguments from within NodeJS and based on the outputs of the Python scripts the API will react in certain ways}
+            \resumeItem{This dynamically generates folders and upload endpoints based on the user's ID as defined in MySQL upon login will SSH into a Raspberry Pi to control GPIO pins}
+            \resumeItem{Utilizes OpenCV and NumPy arrays for picture verification and training data creation}
+
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Relevant Coursework}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Courses}{: Java Programming 1, Advanced Java Programming 2, Introduction to C++, Systems Development Lifecycle, Discrete Mathematics, Linear Algebra, Data Structures and Algorithms, Calculus 1,Calculus 2,Calculus 3, Object Oriented Design, Operating Systems, Web Development, Software Engineering, Computer Organization, Mobile Application Development, Programming Languages, Database Management Systems, Applied Combinatorics, Design and Analysis Algorithms, Data Communication and Networking
+} \\
+     }}
+ \end{itemize}
+ 
+%\iffalse
+% \iftrue
+\end{document}
